@@ -1,0 +1,14 @@
+__pycache__
+/coco_caption/
+/create_dataset/data/clotho_audio_files/*/*.wav
+/create_dataset/data/data_splits/*
+/create_dataset/data/test_data/*
+/create_dataset/data/data_splits_audio/*
+/create_dataset/data/clotho_test_audio/*
+/create_dataset/data/clotho_audio_files/*
+# /data_augmentation/
+# /data_handling/
+/models/
+/pretrainmodel/
+/tmp/
+/word_embedding_pretrain/
