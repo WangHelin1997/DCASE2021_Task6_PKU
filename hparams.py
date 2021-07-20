@@ -26,7 +26,7 @@ class hparams:
     decoder = 'AttDecoder'
 
     seed = 1111
-    device = 'cuda:0'   #'cuda:0' 'cuda:1' 'cpu'
+    device = 'cuda:1'   #'cuda:0' 'cuda:1' 'cpu'
     mode = 'train'
     name = 'base'
     nkeyword = 4979
@@ -58,20 +58,20 @@ class hparams:
     tag_GMAP = False
     tag_specMix = True
 # data(default)
-    data_dir = Path(r'./create_dataset/data/data_splits')
-    eval_data_dir = r'./create_dataset/data/data_splits/evaluation'
-    train_data_dir = r'./create_dataset/data/data_splits/development'
-    test_data_dir = r'./create_dataset/data/test_data'
-    word_dict_pickle_path = r'./create_dataset/data/pickles/words_list.p'
-    word_freq_pickle_path = r'./create_dataset/data/pickles/words_frequencies.p'
-    word_freq_reciprocal_pickle_path = r'./create_dataset/data/pickles/words_weight.pickle'
+    data_dir = Path(r'../DCASE2021_Task6/create_dataset/data/data_splits')
+    eval_data_dir = r'../DCASE2021_Task6/create_dataset/data/data_splits/evaluation'
+    train_data_dir = r'./DCASE2021_Task6/create_dataset/data/data_splits/development'
+    test_data_dir = r'./DCASE2021_Task6/create_dataset/data/test_data'
+    word_dict_pickle_path = r'../DCASE2021_Task6/create_dataset/data/pickles/words_list.p'
+    word_freq_pickle_path = r'../DCASE2021_Task6/create_dataset/data/pickles/words_frequencies.p'
+    word_freq_reciprocal_pickle_path = r'../DCASE2021_Task6/create_dataset/data/pickles/words_weight.pickle'
     # pretrain_model
     tag_keyword_pickle_path = r'./audio_tag/word_list_pretrain_rules.p'
     tagging_to_embs = r'./audio_tag/TaggingToEmbs.p'
     pretrain_emb_path = './create_dataset/data/pickles/words_list_glove.p'
     #pretrain_emb_path = r'./bert_last_hidden.pickle'
     # pretrain_cnn_path = r'./models/tag_models_baseline_finetune/TagModel_25.pt'
-    pretrain_cnn_path = r'./models/tag_models_baseline_finetune/TagModel_25.pt'
+    pretrain_cnn_path = r'../DCASE2021_Task6/models/tag_models_baseline_finetune/TagModel_25.pt'
     pretrain_model_path = r'models/baseline/30.pt'
     #eval dir
     eval_dir = "seed1111/"

@@ -234,19 +234,7 @@ if __name__ == '__main__':
     epoch = 10
 
     if hp.mode == 'eval':
-        model_list=[]
-        # ensemble multi-seeds models
-        # model_name = ["./models/seed1111_rl/10.pt","./models/seed615_rl/10.pt","./models/seed6666_rl/10.pt",
-        #                 "./models/seed1111_rl/9.pt","./models/seed615_rl/9.pt","./models/seed6666_rl/9.pt",
-        #                 "./models/seed1111_rl/8.pt","./models/seed615_rl/8.pt","./models/seed6666_rl/8.pt",]
-        # for name in model_name:
-        #     model = AttModel(hp.ninp, hp.nhid, hp.output_dim_encoder, hp.emb_size, hp.dropout_p_encoder,
-        #                     hp.output_dim_h_decoder, hp.ntoken, hp.dropout_p_decoder, hp.max_out_t_steps, device,
-        #                     'tag', None, hp.tag_emb, hp.multiScale, hp.preword_emb, hp.two_stage_cnn, hp.usingLM).to(device)
-        #     model.load_state_dict(torch.load(name,map_location='cpu'))
-        #     model.eval()
-        #     model_list.append(model)
-        
+        model_list=[]    
         # ensemble models by epochs
         while epoch < hp.training_epochs + 1:
             model = AttModel(hp.ninp, hp.nhid, hp.output_dim_encoder, hp.emb_size, hp.dropout_p_encoder,
@@ -260,7 +248,6 @@ if __name__ == '__main__':
         ensemble_model = EnsembleModel(model_list)
         eval_with_beam(evaluation_beam, ensemble_model, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
                        beam_size=4)
-
     elif hp.mode == 'test':
         # Generate caption(in test_out.csv)
         model_list=[]

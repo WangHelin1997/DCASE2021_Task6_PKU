@@ -387,22 +387,22 @@ if __name__ == '__main__':
             torch.save(model.state_dict(), '{log_dir}/{num_epoch}.pt'.format(log_dir=log_dir, num_epoch=epoch))
             scheduler.step(epoch)
             epoch += 1
-        eval_all(validation_beam, word_dict_pickle_path=word_dict_pickle_path, eval_model=eval_model)
-        eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
-                    beam_size=2, eval_model=eval_model)
-        eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
-                    beam_size=3, eval_model=eval_model)
-        eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
-                    beam_size=4, eval_model=eval_model)
+            eval_all(validation_beam, word_dict_pickle_path=word_dict_pickle_path, eval_model=eval_model)
+            eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
+                        beam_size=2, eval_model=eval_model)
+            eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
+                        beam_size=3, eval_model=eval_model)
+            eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
+                        beam_size=4, eval_model=eval_model)
 
         
 
     if hp.mode == 'eval':
-        epoch = 10
+        epoch = 1
         while epoch < hp.training_epochs + 1:
             # Evaluation model score
             logging.info("The epoch is {}".format(epoch))
-            model.load_state_dict(torch.load("./models/"+hp.eval_dir+str(epoch)+".pt",map_location="cpu"))
+            model.load_state_dict(torch.load("../DCASE2021_Task6/models/ensemble_models/50.pt",map_location="cpu"))
             logging.info(" evaluation ")
             eval_all(validation_beam, word_dict_pickle_path=word_dict_pickle_path, eval_model=eval_model)
             eval_with_beam(validation_beam, max_len=30, eos_ind=9, word_dict_pickle_path=word_dict_pickle_path,
