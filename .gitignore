@@ -12,3 +12,5 @@ __pycache__
 /pretrainmodel/
 /tmp/
 /word_embedding_pretrain/
+/scripts/*.p
+/scripts/prepare_ngram.py
