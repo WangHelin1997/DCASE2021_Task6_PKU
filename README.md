@@ -17,7 +17,7 @@ The training configuration is saved in the `hparams.py` and you can reset it to 
 Run the `Tag_train.py`. Firstly, train the tagging model by freezing up the CNN for 80 epochs, then fintune it for 25 epochs. Finally, the mAP of tagging could reach 0.287 in the evaluation splits.
 
 ### Training the captioning model 
-+ We choose the 25th epoch keyword pre-trained model for our final encoder.
+We choose the 25th epoch keyword pre-trained model for our final encoder.
 #### Train baseline model
 + Run `python run.py`, it will freeze up the encoder and just train the part of decoder for 30 epochs. We choose the best model in validation splits for the next step training.
 + The scores of validation splits will be shown after every epoch.
