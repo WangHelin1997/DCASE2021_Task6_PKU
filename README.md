@@ -48,9 +48,6 @@ You can cite as following:
     year = "2021",
     pages = "40--44"
 }
-
-
-
 ```
 
 or
