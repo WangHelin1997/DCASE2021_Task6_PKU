@@ -34,7 +34,33 @@ We choose the 25th epoch keyword pre-trained model for our final encoder.
 ### Test
 Set `mode=test` in `hparams.py`. Then run `python train.py`, `python train_rl.py` or `python ensemble.py` to get the final results in test splits.
 
+### Cite
+The code is implementation of the papers: [pdf](http://dcase.community/documents/challenge2021/technical_reports/DCASE2021_Ye_21_t6.pdf) and [pdf](http://dcase.community/documents/workshop2021/proceedings/DCASE2021Workshop_Ye_19.pdf).
+
+You can cite as following:
+```
+@inproceedings{Ye2021,
+    author = "Ye, Zhongjie and Wang, Helin and Yang, Dongchao and Zou, Yuexian",
+    title = "Improving the Performance of Automated Audio Captioning via Integrating the Acoustic and Semantic Information",
+    booktitle = "Proceedings of the 6th Detection and Classification of Acoustic Scenes and Events 2021 Workshop (DCASE2021)",
+    address = "Barcelona, Spain",
+    month = "November",
+    year = "2021",
+    pages = "40--44"
+}
 
 
 
+```
 
+or
+
+```
+@techreport{ye2021_t6,
+    Author = "Ye, Zhongjie and Wang, Helin and Yang, Dongchao and Zou, Yuexian",
+    title = "Improving the Performance of Automated Audio Captioning via Integrating the Acoustic and Textual Information",
+    institution = "DCASE2021 Challenge",
+    year = "2021",
+    month = "July"
+}
+```
